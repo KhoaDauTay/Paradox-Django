@@ -1,5 +1,9 @@
 # The Paradox Django:
-
+- Journal for Learning Course: The Complete Python Masterclass: Learn Python From Scratch 
+https://www.udemy.com/course/python-masterclass-course/
+## Link Download: Sign up OneDrive and download course is [here](https://uithcm-my.sharepoint.com/:f:/g/personal/18520917_ms_uit_edu_vn/ElXUPiiDBKxNpt1d8ibNbFUBBSe4Luh5meZOVaMee_1E9A?e=c3svpa)
+## Reference:
+- This is part of a blog I wrote myself [here](https://github.com/KhoaDauTay/learn-python), the purpose of this repo is to build up my own categories of knowledge taken from my blog due to my internship.
 ## Description
 - Make Web-Applications using Python.
 - Build database oriented web apps with Python, PostgreSQL
