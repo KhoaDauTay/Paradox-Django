@@ -76,3 +76,9 @@ https://www.udemy.com/course/python-masterclass-course/
 ### Thoughts
 ### Links to work
 - [Section 3](section-3-building-rest-api's-with-python-and-django/README.md)
+## Day 5
+### Today's progress
+- Learn about topic of Models in Django
+### Thoughts
+### Links to work
+- [Section 4](section-4-building-models-with-orm-django/README.md)
