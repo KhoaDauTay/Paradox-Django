@@ -211,8 +211,6 @@ class Answer(models.Model):
 - One-to-One is a relationship that builds to extend from the main object, which helps the system to offload a lot of storage for objects with lots of private information.
 - For example, if you were building a database of “places”, you would build pretty standard stuff such as address, phone number, etc. in the database. Then, if you wanted to build a database of restaurants on top of the places, instead of repeating yourself and replicating those fields in the Restaurant model, you could make Restaurant have a OneToOneField to Place (because a restaurant “is a” place; in fact, to handle this you'd typically use inheritance, which involves an implicit one-to-one relation).
 
-
-  ![One-to-one-draw](images/extra-many-result.png)
 ```
 from django.db import models
 
