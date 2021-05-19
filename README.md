@@ -19,10 +19,6 @@ https://www.udemy.com/course/python-masterclass-course/
     - Create app
     - Overview app
     - MVC/MVT model
-### Thoughts
-- Need good thinking mind
-- Statistical probabilities
-- Understand requirements
 ### Links to work
 - [Section 1](section-1-make-web-applications-in-python-using-django/README.md)
 ## Day 2
@@ -38,7 +34,6 @@ https://www.udemy.com/course/python-masterclass-course/
     - Learn design detail view
     - Learn use static file
     - Learn use form in Django
-### Thoughts
 ### Links to work
 - [Section 1](section-1-make-web-applications-in-python-using-django/README.md)
 ## Day 3
@@ -58,7 +53,6 @@ https://www.udemy.com/course/python-masterclass-course/
     - Design detail view
     - Use static file
     - Use form in Django
-### Thoughts
 ### Links to work
 - [Section 2](section-2-make-web-applications-with-python-using-django-3.2/README.md)
 ## Day 4
@@ -73,21 +67,36 @@ https://www.udemy.com/course/python-masterclass-course/
     - Learn search functional api
     - Learn filter api
     - Learn api authorization
-### Thoughts
 ### Links to work
 - [Section 3](section-3-building-rest-api's-with-python-and-django/README.md)
 ## Day 5
 ### Today's progress
 - Learn about topic of Models in Django
-### Thoughts
 ### Links to work
 - [Section 4](section-4-building-models-with-orm-django/README.md)
 ## Day 6
 ### Today's progress
 - Dive into Django Query set
-### Thoughts
 ### Links to work
 - [Section 5](section-5-dive-into-django-queryset/README.md)
+## Day 7
+### Today's progress
+- Dive into Django REST Framework
+### Thoughts
+### Links to work
+- [Section 6](section-6-dive-into-django-rest/README.md)
+## Day 8
+### Today's progress
+- Working with Django and Docker
+### Thoughts
+### Links to work
+- [Section 7](section-8-working-with-django-and-docker/README.md)
+## Day 9
+### Today's progress
+- Working with Django Cookiecutter and Docker
+### Thoughts
+### Links to work
+- [Section 8](section-8-working-with-django-cookiecutter-and-docker/README.md)
 
 ## Cheatsheet
 ```py
