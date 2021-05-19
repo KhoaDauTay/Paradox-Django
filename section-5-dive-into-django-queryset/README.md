@@ -165,3 +165,97 @@ my_queryset.reverse()
     # Returns the number of entries whose headline contains 'Lennon'
     Entry.objects.filter(headline__contains='Lennon').count()
     ```
+## Field lookups
+- Field lookups are how you specify the meat of an SQL WHERE clause. They’re specified as keyword arguments to the QuerySet methods filter(), exclude() and get().
+
+### exact
+- Exact match. If the value provided for comparison is None, it will be interpreted as an SQL NULL
+    - Code:
+    ```
+    Entry.objects.get(id__exact=14)
+    Entry.objects.get(id__exact=None)
+    ```
+    - SQL
+
+    ```
+    SELECT ... WHERE name ILIKE 'beatles blog';
+    SELECT ... WHERE name IS NULL;
+    ```
+### contains
+- Case-sensitive containment test.
+  - Code:
+
+    ```
+    Entry.objects.get(headline__contains='Lennon')
+    ```
+  - SQL:
+    ```
+    SELECT ... WHERE headline LIKE '%Lennon%';
+    ```
+### in
+- In a given iterable; often a list, tuple, or queryset. It’s not a common use case, but strings (being iterables) are accepted.
+  - Code:
+
+    ```
+    Entry.objects.filter(id__in=[1, 3, 4])
+    Entry.objects.filter(headline__in='abc')
+    ```
+  - SQL:
+
+    ```
+    SELECT ... WHERE id IN (1, 3, 4);
+    SELECT ... WHERE headline IN ('a', 'b', 'c');
+    ```
+- You can also use a queryset to dynamically evaluate the list of values instead of providing a list of literal values:
+  - Code:
+    ```
+    inner_qs = Blog.objects.filter(name__contains='Cheddar')
+    entries = Entry.objects.filter(blog__in=inner_qs)
+    ```
+
+  - SQL:
+
+    ```
+    SELECT ... WHERE blog.id IN (SELECT id FROM ... WHERE NAME LIKE '%Cheddar%')
+    ```
+### gt
+- Greater than.
+  - Code:
+
+    ```
+    Entry.objects.filter(id__gt=4)
+    ```
+  - SQL:
+
+    ```
+    SELECT ... WHERE id > 4;
+    ```
+### range
+- Range test (inclusive).
+  - Code:
+
+    ```
+    import datetime
+    start_date = datetime.date(2005, 1, 1)
+    end_date = datetime.date(2005, 3, 31)
+    Entry.objects.filter(pub_date__range=(start_date, end_date))
+    ```
+  - SQL:
+
+    ```
+    SELECT ... WHERE pub_date BETWEEN '2005-01-01' and '2005-03-31';
+    ```
+### isnull
+- Takes either True or False, which correspond to SQL queries of IS NULL and IS NOT NULL, respectively.
+  - Code:
+    ```
+    Entry.objects.filter(pub_date__isnull=True)
+
+    ```
+  - SQL:
+
+    ```
+    SELECT ... WHERE pub_date IS NULL;
+    ```
+
+
