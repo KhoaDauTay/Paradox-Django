@@ -70,8 +70,8 @@ THIRD_PARTY_APPS = [
     "allauth.socialaccount",
     "django_celery_beat",
     "rest_framework",
-    "rest_framework.authtoken",
     "corsheaders",
+    'oauth2_provider',
 ]
 
 LOCAL_APPS = [

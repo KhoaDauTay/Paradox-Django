@@ -24,7 +24,56 @@
     ```
 - Step 5: Create `Dockerfile`
     - Copy it into file
-```
-```
+    ```
+    FROM python:3.8.6
+    ENV PYTHONUNBUFFERED=1
+    WORKDIR /app
+    COPY requirements.txt /app/requirements.txt
+    RUN pip install -r requirements.txt
+    COPY . /app
+
+    CMD python manage.py runserver 0.0.0.0:8000
+    ```
+- Step 6: Setup docker compose
+
+    ```
+    version: '3.8'
+    services:
+        web:
+            build: 
+                context: .
+                dockerfile: Dockerfile
+            ports: 
+                - 8000:8000
+            volumes: 
+                - .:/app
+            depends_on:
+                - db
+        db:
+            image: mysql:5.7.22
+            restart: always
+            environment:
+                MYSQL_DATABASE: admin
+                MYSQL_USER: root
+                MYSQL_PASSWORD: root
+                MYSQL_ROOT_PASSWORD: root
+            volumes:
+                - .dbdata:/var/lib/mysql
+            ports:
+                - 33066:3306
+    ```
 ## Connect Django with MySQL with Docker
-## Django Rest API CRUD
+- Build and run compose :
+
+    ```
+    docker-compose up
+    ```
+- Stop compose:
+    ```
+    docker-compose down
+    ```
+- When `docker-compose up`, you can access terminal and run migrate with Mysql:
+
+    ```
+    docker-compose exec web python3 manage.py migrate
+    ```

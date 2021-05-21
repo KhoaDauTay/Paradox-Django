@@ -3,5 +3,5 @@
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.8 (my_awesome_project)" project-jdk-type="Python SDK" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="Remote Python 3.9.5 Docker Compose (django at [/home/khoa/Documents/Paradox/Paradox-Django/section-8-working-with-django-cookiecutter-and-docker/code/part-1-django-cookiecutter/my_awesome_project/local.yml])" project-jdk-type="Python SDK" />
 </project>
